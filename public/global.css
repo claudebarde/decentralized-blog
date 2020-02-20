@@ -55,7 +55,8 @@ section {
   margin: 3px;
 }
 
-ol li {
+ol li,
+ul li {
   margin: 10px 0px;
 }
 
@@ -77,6 +78,11 @@ a {
   margin-bottom: 100px;
   text-align: right;
   font-size: 1rem;
+}
+
+.subtitle {
+  margin: 0px 20px;
+  font-style: italic;
 }
 
 @media only screen and (max-width: 1000px) {

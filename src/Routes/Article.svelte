@@ -3,6 +3,7 @@
   import moment from "moment";
   import bodyParser from "../body-parser.js";
   import tableOfContents from "../table_of_contents.json";
+  //import example from "../example/example.json";
 
   export let params = {};
   let article = undefined;
@@ -17,9 +18,12 @@
       if (entry.length === 1) {
         errorMessage = undefined;
         try {
-          const json = await fetch(`https://ipfs.io/ipfs/${entry[0].hash}`);
+          const json = await fetch(
+            `https://gateway.pinata.cloud/ipfs/${entry[0].hash}`
+          );
           article = await json.json();
         } catch (error) {
+          //article = example;
           article = undefined;
           errorMessage = "Article could not be fetched, please try again.";
         }
