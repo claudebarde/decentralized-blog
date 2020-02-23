@@ -21,6 +21,15 @@ const format = text => {
     // formats string
     text = text.replace(match[0], `<em>${match[1]}</em>`);
   }
+  // formats inline code
+  const regexpInlineCode = RegExp("\\[\\[code (.*?)\\]\\]", "g");
+  while ((match = regexpInlineCode.exec(text)) !== null) {
+    // formats string
+    text = text.replace(
+      match[0],
+      `<span class="inline-code">${match[1]}</span>`
+    );
+  }
 
   return text;
 };
@@ -54,27 +63,27 @@ const bodyParser = body => {
         `<section>${body[section]
           .map(el => {
             let block = "";
-            if (el.type === "title") {
+            if (el && el.type === "title") {
               block = `<h4>${el.text}</h4>`;
-            } else if (el.type === "subtitle") {
+            } else if (el && el.type === "subtitle") {
               block = `<div class="subtitle">${el.text}</div>`;
-            } else if (el.type === "div" && el.style === "none") {
+            } else if (el && el.type === "div" && el.style === "none") {
               block = el.text
                 .map(div => `<div class="article__div">${div}</div>`)
                 .join("");
-            } else if (el.type === "div" && el.style === "code") {
+            } else if (el && el.type === "div" && el.style === "code") {
               block = `<div class="code">${codeParser(el.text)}</div>`;
-            } else if (el.type === "ol") {
+            } else if (el && el.type === "ol") {
               block = `<ol>${el.text
                 .map(line => `<li>${line}</li>`)
                 .join("")}</ol>`;
-            } else if (el.type === "ul") {
+            } else if (el && el.type === "ul") {
               block = `<ul>${el.text
                 .map(line => `<li>${line}</li>`)
                 .join("")}</ul>`;
-            } else if (el.type === "img") {
+            } else if (el && el.type === "img") {
               block = `<img src="${el.image}" alt="image" />`;
-            } else if (el.type === "conclusion") {
+            } else if (el && el.type === "conclusion") {
               block = `<h4>Conclusion</h4>${el.text
                 .map(div => `<div class="article__div">${div}</div>`)
                 .join("")}`;

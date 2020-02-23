@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 30px;
 }
 
 main {
@@ -53,6 +54,13 @@ section {
 .code-block p {
   padding: 0px;
   margin: 3px;
+}
+
+.inline-code {
+  background-color: #edf2f7;
+  padding: 2px 5px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
 }
 
 ol li,
