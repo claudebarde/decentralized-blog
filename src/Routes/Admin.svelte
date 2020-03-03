@@ -62,7 +62,7 @@ conclusion:
               return {
                 type: "div",
                 style: "none",
-                text: block.slice(4).split("//")
+                text: block.slice(4).split("///")
               };
             } else if (block.slice(0, 5) === "title") {
               // subtitle
@@ -102,7 +102,7 @@ conclusion:
                 style: "none",
                 text: block
                   .slice(3)
-                  .split("//")
+                  .split("///")
                   .map(line => line)
               };
             } else if (block.slice(0, 2) === "ul") {
@@ -112,7 +112,7 @@ conclusion:
                 style: "none",
                 text: block
                   .slice(3)
-                  .split("//")
+                  .split("///")
                   .map(line => line)
               };
             }
