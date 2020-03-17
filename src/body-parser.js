@@ -1,12 +1,13 @@
 const format = text => {
   // formats links
-  const regexpLinks = RegExp('\\[\\["link", "(.*?)", "(.*?)"\\]\\]', "g");
+  //const regexpLinks = RegExp('\\[\\["link", "(.*?)", "(.*?)"\\]\\]', "g");
+  const regexpLinks = RegExp("\\[http(.*?)\\]\\[(.*?)\\]", "g");
   let match;
   while ((match = regexpLinks.exec(text)) !== null) {
     // formats link
     text = text.replace(
       match[0],
-      `<a href="${match[1]}" target="_blank" rel="noopener noreferrer">${match[2]}</a>`
+      `<a href="http${match[1]}" target="_blank" rel="noopener noreferrer">${match[2]}</a>`
     );
   }
   // formats bold text
@@ -27,7 +28,9 @@ const format = text => {
     // formats string
     text = text.replace(
       match[0],
-      `<span class="inline-code">${match[1]}</span>`
+      `<span class="inline-code">${match[1]
+        .replace("<", "&lt;")
+        .replace(/\\]/g, "]")}</span>`
     );
   }
 
