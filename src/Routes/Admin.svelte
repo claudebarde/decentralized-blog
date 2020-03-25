@@ -28,6 +28,10 @@ conclusion:
     match = text.match(/subtitle:(.*)\n/);
     if (match) store.updateSubtitle(match[1]);
 
+    // checks for banner
+    match = text.match(/banner:(.*)\n/);
+    if (match) store.updateBanner(match[1]);
+
     // gets for body
     let body = text.match(/body:\{(.*)\}/s);
     if (body) {
@@ -161,6 +165,11 @@ conclusion:
   <div class="output">
     <h2>{article.title}</h2>
     <h3>{article.subtitle}</h3>
+    <div class="banner">
+      <img
+        src="https://gateway.pinata.cloud/ipfs/{article.banner}"
+        alt="banner" />
+    </div>
     <div>
       {@html bodyParser(article.body)}
     </div>

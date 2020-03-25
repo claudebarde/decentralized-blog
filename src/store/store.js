@@ -6,6 +6,7 @@ const store = () => {
     url: "",
     title: "",
     subtitle: "",
+    banner: "",
     body: {
       intro: [],
       section1: []
@@ -24,6 +25,9 @@ const store = () => {
     },
     updateSubtitle: subtitle => {
       update(currentStore => ({ ...currentStore, subtitle }));
+    },
+    updateBanner: banner => {
+      update(currentStore => ({ ...currentStore, banner }));
     },
     updateIntro: intro => {
       update(currentStore => ({

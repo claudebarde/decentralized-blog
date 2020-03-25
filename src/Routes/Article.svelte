@@ -49,6 +49,12 @@
         <h2>{article.title}</h2>
       {:else if item === 'subtitle'}
         <h3>{article.subtitle}</h3>
+      {:else if item === 'banner'}
+        <div class="banner">
+          <img
+            src="https://gateway.pinata.cloud/ipfs/{article.banner}"
+            alt="banner" />
+        </div>
       {:else if item === 'body'}
         {@html bodyParser(article.body)}
       {:else if item === 'signature'}
