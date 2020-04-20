@@ -1,5 +1,12 @@
 [
   {
+    "hash": "QmUrMh4nFSA3qXkHujvLZG33jNDyP3GTXFgdd7D8TbUbch",
+    "url": "solidity-vs-ligo",
+    "title": "Solidity vs Ligo: the main differences",
+    "subtitle": "Everything you need to know about writing smart contracts on the Tezos blockchain when you come from Ethereum",
+    "timestamp": 1587375220580
+  },
+  {
     "hash": "QmcpmYmJVV8XuguqU3KT4aWYnZu9xyUJAt87jDdwP37oho",
     "url": "ligo-lesson-4",
     "title": "Understanding Maps in Ligo",
