@@ -1,6 +1,8 @@
 <script>
   import moment from "moment";
   import { push } from "svelte-spa-router";
+  import { fly } from "svelte/transition";
+  import { onMount } from "svelte";
   import tableOfContents from "../table_of_contents.json";
 </script>
 
@@ -56,7 +58,7 @@
 </style>
 
 <main>
-  <div class="description">
+  <div class="description" in:fly={{ delay: 500, duration: 2000, x: -600 }}>
     <div class="avatar">
       <img src="claude.png" alt="avatar" />
     </div>
@@ -65,8 +67,10 @@
       <div>Development of decentralized applications</div>
     </div>
   </div>
-  {#each tableOfContents as article}
-    <div class="entry">
+  {#each tableOfContents as article, i}
+    <div
+      class="entry"
+      in:fly={{ delay: ((i + 1) * 1000) / 3, duration: 500, y: 200 }}>
       <div class="title" on:click={() => push(`/post/${article.url}`)}>
         {article.title}
       </div>
