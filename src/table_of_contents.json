@@ -1,5 +1,12 @@
 [
   {
+    "hash": "QmdJ1DZGh8Dhqc9ufubg9AjuAJGZiMGcYapB4kLxgv92Qd",
+    "url": "tzip7-proposal-beginner",
+    "title": "A beginner’s guide to Tezos TZIP-7 proposal",
+    "subtitle": "Understanding how fungible tokens work on the Tezos blockchain",
+    "timestamp": 1588943163345
+  },
+  {
     "hash": "QmUrMh4nFSA3qXkHujvLZG33jNDyP3GTXFgdd7D8TbUbch",
     "url": "solidity-vs-ligo",
     "title": "Solidity vs Ligo: the main differences",

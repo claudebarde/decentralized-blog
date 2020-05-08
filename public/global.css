@@ -92,6 +92,8 @@ a {
 
 .subtitle {
   margin: 0px 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .banner {
@@ -103,6 +105,13 @@ a {
 
 .banner img {
   width: 100%;
+}
+
+.note {
+  border-left: solid 5px #48bb78;
+  padding-left: 15px;
+  font-style: italic;
+  font-size: 1rem;
 }
 
 @media only screen and (max-width: 1000px) {

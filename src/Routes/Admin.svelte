@@ -119,6 +119,16 @@ conclusion:
                   .split("///")
                   .map(line => line)
               };
+            } else if (block.slice(0, 4) === "note") {
+              // code block
+              return {
+                type: "note",
+                style: "none",
+                text: block
+                  .slice(5)
+                  .split("///")
+                  .map(line => line)
+              };
             }
           });
 

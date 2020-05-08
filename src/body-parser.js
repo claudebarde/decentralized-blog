@@ -1,4 +1,4 @@
-const format = text => {
+const format = (text) => {
   // formats links
   //const regexpLinks = RegExp('\\[\\["link", "(.*?)", "(.*?)"\\]\\]', "g");
   const regexpLinks = RegExp("\\[http(.*?)\\]\\[(.*?)\\]", "g");
@@ -37,7 +37,7 @@ const format = text => {
   return text;
 };
 
-const codeParser = code => {
+const codeParser = (code) => {
   return code
     .map((block, index) => {
       return `<div class="code-block">${block
@@ -56,15 +56,15 @@ const codeParser = code => {
     .join("");
 };
 
-const bodyParser = body => {
+const bodyParser = (body) => {
   // breaks down sections, each section is an array of objects
   const sections = Object.keys(body);
 
   return sections
     .map(
-      section =>
+      (section) =>
         `<section>${body[section]
-          .map(el => {
+          .map((el) => {
             let block = "";
             if (el && el.type === "title") {
               block = `<h4>${el.text}</h4>`;
@@ -72,23 +72,25 @@ const bodyParser = body => {
               block = `<div class="subtitle">${el.text}</div>`;
             } else if (el && el.type === "div" && el.style === "none") {
               block = el.text
-                .map(div => `<div class="article__div">${div}</div>`)
+                .map((div) => `<div class="article__div">${div}</div>`)
                 .join("");
             } else if (el && el.type === "div" && el.style === "code") {
               block = `<div class="code">${codeParser(el.text)}</div>`;
             } else if (el && el.type === "ol") {
               block = `<ol>${el.text
-                .map(line => `<li>${line}</li>`)
+                .map((line) => `<li>${line}</li>`)
                 .join("")}</ol>`;
             } else if (el && el.type === "ul") {
               block = `<ul>${el.text
-                .map(line => `<li>${line}</li>`)
+                .map((line) => `<li>${line}</li>`)
                 .join("")}</ul>`;
             } else if (el && el.type === "img") {
               block = `<img src="${el.image}" alt="image" />`;
+            } else if (el && el.type === "note") {
+              block = `<div class="note">${el.text.join(" ")}</div>`;
             } else if (el && el.type === "conclusion") {
               block = `<h4>Conclusion</h4>${el.text
-                .map(div => `<div class="article__div">${div}</div>`)
+                .map((div) => `<div class="article__div">${div}</div>`)
                 .join("")}`;
             }
 
