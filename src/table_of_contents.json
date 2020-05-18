@@ -1,5 +1,12 @@
 [
   {
+    "hash": "QmUKrNaTPyDtTqFdieGqRMLoJxg8NZjcQCF1FrhX7TCzCi",
+    "url": "oracle-tezos-ligo-beginner",
+    "title": "A use case for oracles on Tezos: calling external contracts with Ligo",
+    "subtitle": "Learn how inter-contract invocations work in Ligo",
+    "timestamp": 1589805762561
+  },
+  {
     "hash": "QmdJ1DZGh8Dhqc9ufubg9AjuAJGZiMGcYapB4kLxgv92Qd",
     "url": "tzip7-proposal-beginner",
     "title": "A beginner’s guide to Tezos TZIP-7 proposal",
